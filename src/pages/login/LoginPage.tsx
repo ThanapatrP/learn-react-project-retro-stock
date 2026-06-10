@@ -1,7 +1,11 @@
-import React, { use } from "react";
+import React from "react";
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+  let navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const handleOnUsernameChange = (event: any) => {
     setUsername(event.target.value);
@@ -15,6 +19,7 @@ export default function LoginPage() {
   const onLoginClick = () => {
     if (username === "user" && password === "1234") {
       console.log("login complete");
+      navigate("/dashboard")
     } else {
       setLoginErrorMsg("Error: user and password not match.");
     }
@@ -29,15 +34,15 @@ export default function LoginPage() {
         type="text"
         placeholder="Username"
         onChange={handleOnUsernameChange}
-        className="bg-white block"
+        className="bg-gray-700 block"
       />
       <input
         type="password"
         placeholder="Password"
         onChange={handleOnPasswordChange}
-        className="bg-white block"
+        className="bg-gray-700 block"
       />
-      <button className="bg-white" onClick={onLoginClick}>
+      <button className="bg-gray-700" onClick={onLoginClick}>
         Login
       </button>
       <p className="text-red-500">{loginErrorMsg}</p>
