@@ -1,4 +1,4 @@
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 async function getPokemon(
@@ -26,17 +26,17 @@ export default function PokeApiPage() {
 
   const onSearchFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPokemonName(event.target.value);
-    // console.log(event.target.value);
   };
 
   useEffect(() => {
     if (pokemonName.trim() == "") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPokemonName("");
       return;
     }
 
     const fetchPokemon = async () => {
-      const pokemonData: any = await getPokemon(
+      const pokemonData: unknown = await getPokemon(
         pokemonUrl,
         pokemonName,
         setLoading,
