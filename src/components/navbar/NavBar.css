@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.linkButton {
+  @apply inline text-xl mx-2;
+}
+
+.linkButton:hover {
+  @apply underline;
+}

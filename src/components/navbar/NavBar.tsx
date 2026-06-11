@@ -1,23 +1,31 @@
+import "./NavBar.css";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="p-4 sticky top-0 w-screen bg-[url('src/assets/metal-with-rust.png')] z-10">
+    <nav className="p-4 sticky top-0 w-screen bg-gray-600 drop-shadow-2xl z-10">
       <Link to="/dashboard">
         <img
           src="src/assets/gameboy-cart.png"
-          className="w-1/24 drop-shadow-lg inline"
+          className="w-1/24 drop-shadow-lg inline m-auto hover:brightness-120"
         />
       </Link>
       <Link to="/dashboard">
-        <h1 className="inline underline text-2xl m-5">Dashboard</h1>
+        <h2 className="inline ubuntu-bold text-xl m-5 hover:underline">
+          Dashboard
+        </h2>
       </Link>
-      <Link to="/carts">
-        <h1 className="right-0 inline underline text-2xl">Carts</h1>
-      </Link>
-      <Link to="/consoles">
-        <h1 className="mr-0 inline underline text-2xl">Games</h1>
-      </Link>
+      <div className="absolute right-8 m-auto inline">
+        <Link to="/games">
+          <h2 className="linkButton ubuntu-medium">Games</h2>
+        </Link>
+        <Link to="/consoles">
+          <h2 className="linkButton ubuntu-medium">Console</h2>
+        </Link>
+        <Link to="/about">
+          <h2 className="linkButton ubuntu-medium">About</h2>
+        </Link>
+      </div>
     </nav>
   );
 }

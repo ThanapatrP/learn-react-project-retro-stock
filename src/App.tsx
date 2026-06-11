@@ -24,11 +24,7 @@ export function MainLayout() {
       </main>
 
       {location.pathname != "/login" ? (
-        <img
-          src="src/assets/metal-with-rust.png"
-          className="absolute w-screen h-auto brightness-30 -z-10 object-crop"
-          alt=""
-        />
+        <div className="absolute top-0 w-screen h-screen bg-gray-800"></div>
       ) : (
         <></>
       )}
