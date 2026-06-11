@@ -22,6 +22,9 @@ export default function NavBar() {
         <Link to="/consoles">
           <h2 className="linkButton ubuntu-medium">Console</h2>
         </Link>
+        <Link to="/pokeapi">
+          <h2 className="linkButton ubuntu-medium">Get Pokemon</h2>
+        </Link>
         <Link to="/about">
           <h2 className="linkButton ubuntu-medium">About</h2>
         </Link>
