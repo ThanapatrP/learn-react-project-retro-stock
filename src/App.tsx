@@ -11,6 +11,7 @@ import NavBar from "./components/navbar/NavBar";
 
 import LoginPage from "./pages/login/LoginPage";
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import ConsolesPage from "./pages/consoles/ConsolesPage";
 import PokeApiPage from "./pages/PokeApiPage/PokeApiPage";
 
 export function MainLayout() {
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Navigate to="/login" replace /> },
       { path: "/login", element: <LoginPage /> },
       { path: "/dashboard", element: <DashboardPage /> },
+      { path: "/consoles", element: <ConsolesPage /> },
       { path: "/pokeapi", element: <PokeApiPage /> },
     ],
   },
